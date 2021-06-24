@@ -16,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function ()
 {
 
+	return view('welcome');
+
+});
+
+Route::get('/posts', function ()
+{
+
 	$client = new Client([
 							 // Base URI is used with relative requests
 							 'base_uri' => 'https://jsonplaceholder.typicode.com',
@@ -23,12 +30,10 @@ Route::get('/', function ()
 							 'timeout' => 2.0,
 						 ]);
 
-	// getting posts from https://jsonplaceholder.typicode.com/posts
-
 	$response = $client->request('GET', 'posts');
 
-	dd($response->getBody()->getContents());
+	$posts = json_decode($response->getBody()->getContents());
 
-	return view('welcome');
+	return view('posts.index', compact('posts'));
 
 });
