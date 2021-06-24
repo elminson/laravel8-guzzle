@@ -22,15 +22,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request)
 	return $request->user();
 });
 
-
-Route::get('/', function ()
-{
-
-	$client = new Client([
-							 // Base URI is used with relative requests
-							 'base_uri' => 'https://jsonplaceholder.typicode.com',
-							 // You can set any number of default request options.
-							 'timeout' => 2.0,
-						 ]);
-
-});

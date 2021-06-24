@@ -12,7 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function ()
+{
 
-Route::get('/', function () {
-    return view('welcome');
+	$client = new Client([
+							 // Base URI is used with relative requests
+							 'base_uri' => 'https://jsonplaceholder.typicode.com',
+							 // You can set any number of default request options.
+							 'timeout' => 2.0,
+						 ]);
+
+	return view('welcome');
+
 });
