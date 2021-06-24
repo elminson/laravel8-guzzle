@@ -27,7 +27,7 @@ Route::get('/', function ()
 
 	$response = $client->request('GET', 'posts');
 
-	dd($response);
+	dd($response->getBody()->getContents());
 
 	return view('welcome');
 
