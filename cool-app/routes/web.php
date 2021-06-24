@@ -33,7 +33,7 @@ Route::get('/posts', function ()
 	$response = $client->request('GET', 'posts');
 
 	$posts = json_decode($response->getBody()->getContents());
-
+	// https://jsonplaceholder.typicode.com/users/1
 	return view('posts.index', compact('posts'));
 
 });
