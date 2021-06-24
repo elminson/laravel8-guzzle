@@ -23,6 +23,12 @@ Route::get('/', function ()
 							 'timeout' => 2.0,
 						 ]);
 
+	// getting posts from https://jsonplaceholder.typicode.com/posts
+
+	$response = $client->request('GET', 'posts');
+
+	dd($response);
+
 	return view('welcome');
 
 });
