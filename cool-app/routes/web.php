@@ -1,8 +1,7 @@
 <?php
 
-use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,25 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', function ()
 {
-
 	return view('welcome');
-
 });
 
-Route::get('/posts', function ()
-{
+//AppServiceProvider::class
 
-	$client = new Client([
-							 // Base URI is used with relative requests
-							 'base_uri' => 'https://jsonplaceholder.typicode.com',
-							 // You can set any number of default request options.
-							 'timeout' => 2.0,
-						 ]);
+//Route::get('/posts', 'PostsController@index');
+Route::get('/posts', [PostsController::class, 'index']);
 
-	$response = $client->request('GET', 'posts');
+//Route::get('/posts/{id}', 'PostsController@show');
+Route::get('/posts/{id}', [PostsController::class, 'show']);
 
-	$posts = json_decode($response->getBody()->getContents());
-	// https://jsonplaceholder.typicode.com/users/1
-	return view('posts.index', compact('posts'));
-
-});
