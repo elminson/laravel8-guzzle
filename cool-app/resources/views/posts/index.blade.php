@@ -26,7 +26,7 @@
             @foreach ($posts as $post)
                 <!-- Post preview-->
                 <div class="post-preview">
-                    <a href="post.html">
+                    <a href="#">
                         <h2 class="post-title">  {{ $post->title }}</h2>
                         <h3 class="post-subtitle"> {{ $post->body }}</h3>
                     </a>
