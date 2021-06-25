@@ -18,6 +18,14 @@ class GuzzleHttpRequest
 								   ]);
 	}
 
+	/**
+	 * Send Get Request using GuzzleHttp
+	 *
+	 * @param $url
+	 *
+	 * @return mixed
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 */
 	public function get($url)
 	{
 

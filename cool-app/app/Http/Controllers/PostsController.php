@@ -20,6 +20,11 @@ class PostsController extends Controller
 		$this->posts = $posts;
 	}
 
+	/**
+	 * Show all posts
+	 *
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+	 */
 	public function index()
 	{
 
@@ -28,6 +33,13 @@ class PostsController extends Controller
 		return view('posts.index', compact('posts'));
 	}
 
+	/**
+	 * Show single post
+	 *
+	 * @param $id
+	 *
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+	 */
 	public function show($id)
 	{
 

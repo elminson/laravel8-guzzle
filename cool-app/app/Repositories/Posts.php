@@ -11,12 +11,24 @@ class Posts extends HttpRequestClass
 		parent::__construct();
 	}
 
+	/**
+	 * Get All Post
+	 *
+	 * @return mixed
+	 */
 	public function all()
 	{
 
 		return $this->get('posts');
 	}
 
+	/**
+	 * Find a post
+	 *
+	 * @param $id
+	 *
+	 * @return mixed
+	 */
 	public function find($id)
 	{
 

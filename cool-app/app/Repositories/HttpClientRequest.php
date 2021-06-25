@@ -16,6 +16,13 @@ class HttpClientRequest
 
 	}
 
+	/**
+	 * Send Get Request using Http Client
+	 *
+	 * @param $url
+	 *
+	 * @return mixed
+	 */
 	public function get($url)
 	{
 

@@ -24,12 +24,30 @@ class HttpRequestClass
 
 	}
 
+	/**
+	 * Send Get Request
+	 *
+	 * @param $url
+	 *
+	 * @return mixed
+	 */
 	public function get($url)
 	{
 
 		$response = $this->client->get($url);
 
 		return $response;
+
+	}
+
+	/**
+	 * Send Post Request
+	 *
+	 * @param $url
+	 * @param $data
+	 */
+	public function post($url, $data)
+	{
 
 	}
 
