@@ -230,4 +230,6 @@ return [
 
     ],
 
+	'base_uri' => env('BASE_URI', 'https://jsonplaceholder.typicode.com'),
+
 ];
