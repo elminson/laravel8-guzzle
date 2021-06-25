@@ -10,10 +10,12 @@ class GuzzleHttpRequest
 
 	protected $client;
 
-	public function __construct(Client $client)
+	public function __construct()
 	{
 
-		$this->client = $client;
+		$this->client = new Client([
+									   'base_uri' => config('app.base_uri')
+								   ]);
 	}
 
 	public function get($url)

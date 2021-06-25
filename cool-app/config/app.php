@@ -231,5 +231,7 @@ return [
     ],
 
 	'base_uri' => env('BASE_URI', 'https://jsonplaceholder.typicode.com'),
+	'http_client' => env('HTTP_CLIENT', 'GuzzleHttp'),
+	// 'http_client' => env('HTTP_CLIENT', 'HttpClient'),
 
 ];
