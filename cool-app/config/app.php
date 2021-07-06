@@ -230,8 +230,9 @@ return [
 
     ],
 
-	'base_uri' => env('BASE_URI', 'https://jsonplaceholder.typicode.com'),
-	'http_client' => env('HTTP_CLIENT', 'GuzzleHttp'),
-	// 'http_client' => env('HTTP_CLIENT', 'HttpClient'),
+	// 'base_uri' => env('BASE_URI', 'https://jsonplaceholder.typicode.com'),
+	'base_uri' => env('BASE_URI', 'https://api.thecatapi.com/v1/images/search'),
+	'http_client' => env('HTTP_CLIENT', 'HttpClient'),
+	'cat_api' => env('CAT_API', ''),
 
 ];

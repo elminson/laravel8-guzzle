@@ -23,15 +23,13 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-            @foreach ($users as $user)
-                <!-- Post preview-->
+            @foreach ($cats as $cat)
+                <!-- Cat preview-->
                 <div class="post-preview">
-                    <a href="/users/{{ $user->id }}">
-                        <h2 class="post-title">  {{ $user->name }}</h2>
-                        <h3 class="post-subtitle"> {{ $user->email }}</h3>
-                        <h3 class="post-subtitle"> {{ $user->phone }}</h3>
-                    </a>
+                    <a href="/photos/{{ $cat->id }}">
+                        <img src="{{ $cat->url}}">
 
+                    </a>
                 </div>
                 <!-- Divider-->
                 <hr class="my-4" />

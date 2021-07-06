@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PhotosController;
+use App\Http\Controllers\CatsController;
 use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +36,14 @@ Route::get('/users', [UsersController::class, 'index']);
 //Route::get('/users/{id}', 'UsersController@show');
 Route::get('/users/{id}', [UsersController::class, 'show']);
 
+// Photos
+//Route::get('/photos', 'PhotosController@index');
+Route::get('/photos', [PhotosController::class, 'index']);
+
+//Route::get('/photos/{id}', 'PhotosController@show');
+Route::get('/photos/{id}', [PhotosController::class, 'show']);
+
+
+// Cats
+//Route::get('/cats', 'CatsController@index');
+Route::get('/cats', [CatsController::class, 'index']);

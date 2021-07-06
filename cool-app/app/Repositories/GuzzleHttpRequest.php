@@ -14,8 +14,12 @@ class GuzzleHttpRequest
 	{
 
 		$this->client = new Client([
-									   'base_uri' => config('app.base_uri')
+									   'base_uri' => config('app.base_uri'),
+									   'headers' => [
+										   'x-api-key' => config('app.cat_api'),
+									   ]
 								   ]);
+		echo "GuzzleHttpRequest!";
 	}
 
 	/**

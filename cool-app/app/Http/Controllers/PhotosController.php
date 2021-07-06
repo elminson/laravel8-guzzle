@@ -3,37 +3,37 @@
 namespace App\Http\Controllers;
 
 
-use App\Repositories\Posts;
+use App\Repositories\Cats;
 
-class PostsController extends Controller
+class PhotosController extends Controller
 {
 
 	/**
-	 * @var Posts
+	 * @var Cats
 	 */
-	private $posts;
+	private $photos;
 
-	public function __construct(Posts $posts)
+	public function __construct(Cats $photos)
 	{
 
-		$this->posts = $posts;
+		$this->photos = $photos;
 	}
 
 	/**
-	 * Show all posts
+	 * Show all photos
 	 *
 	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
 	 */
 	public function index()
 	{
 
-		$posts = $this->posts->all();
+		$photos = $this->photos->all();
 
-		return view('posts.index', compact('posts'));
+		return view('photos.index', compact('photos'));
 	}
 
 	/**
-	 * Show single post
+	 * Show single photos
 	 *
 	 * @param $id
 	 *
@@ -42,9 +42,9 @@ class PostsController extends Controller
 	public function show($id)
 	{
 
-		$post = $this->posts->find($id);
+		$photo = $this->photos->find($id);
 
-		return view('posts.show', compact('post'));
+		return view('photos.show', compact('photo'));
 	}
 
 }

@@ -13,7 +13,7 @@ class HttpClientRequest
 	{
 
 		$this->baseUri = config('app.base_uri');
-
+		echo "HttpClientRequest";
 	}
 
 	/**
@@ -26,7 +26,11 @@ class HttpClientRequest
 	public function get($url)
 	{
 
-		$response = Http::get($this->baseUri . '/' . $url);
+		$response = Http::withHeaders(
+			[
+				'x-api-key' => config('app.cat_api')
+			])->get($this->baseUri . '/' . $url);
+
 		return json_decode($response->getBody()->getContents());
 
 	}
