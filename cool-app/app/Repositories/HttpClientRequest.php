@@ -13,7 +13,7 @@ class HttpClientRequest
 	{
 
 		$this->baseUri = config('app.base_uri');
-		echo "HttpClientRequest";
+
 	}
 
 	/**

@@ -19,7 +19,7 @@ class GuzzleHttpRequest
 										   'x-api-key' => config('app.cat_api'),
 									   ]
 								   ]);
-		echo "GuzzleHttpRequest!";
+
 	}
 
 	/**
